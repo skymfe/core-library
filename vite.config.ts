@@ -17,10 +17,7 @@ export default defineConfig({
   build: {
     lib: {
       name: "core-library",
-      entry: {
-        auth: resolve(__dirname, "lib/auth.ts"),
-        "http-client": resolve(__dirname, "lib/http-client.ts"),
-      },
+      entry: resolve(__dirname, "lib/index.ts"),
     },
     rollupOptions: {
       external: [],

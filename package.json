@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "type": "module",
   "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build",
@@ -14,16 +16,7 @@
     "dist"
   ],
   "exports": {
-    "./auth": {
-      "types": "./dist/auth.d.ts",
-      "import": "./dist/auth.js",
-      "require": "./dist/auth.cjs"
-    },
-    "./http-client": {
-      "types": "./dist/http-client.d.ts",
-      "import": "./dist/http-client.js",
-      "require": "./dist/http-client.cjs"
-    }
+    ".": "./dist/index.d.ts"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.9",
