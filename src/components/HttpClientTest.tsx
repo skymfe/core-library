@@ -1,13 +1,15 @@
 import React from "react";
-import { httpClient } from "../../lib/http-client";
+import { HttpClient } from "../../lib/http-client";
 
 export const HttpClientTest: React.FC = () => {
+  const httpClient = new HttpClient("https://api.example.com");
+
   const handleGet = () => {
-    httpClient.get("https://api.example.com/data");
+    httpClient.get("/data");
   };
 
   const handlePost = () => {
-    httpClient.post("https://api.example.com/data", { test: "data" });
+    httpClient.post("/data", { test: "data" });
   };
 
   return (
