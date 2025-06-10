@@ -3,20 +3,25 @@
   "version": "0.0.2",
   "type": "module",
   "private": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/core-library.umd.cjs",
+  "module": "./dist/core-library.js",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/core-library.js",
+      "require": "./dist/core-library.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "prepublishOnly": "yarn build"
-  },
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": "./dist/index.d.ts"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.9",

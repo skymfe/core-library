@@ -12,12 +12,14 @@ export default defineConfig({
     react(),
     dts({
       tsconfigPath: "./tsconfig.lib.json",
+      include: ["lib"],
     }),
   ],
   build: {
     lib: {
       name: "core-library",
-      entry: resolve(__dirname, "lib/index.ts"),
+      fileName: "core-library",
+      entry: resolve(__dirname, "lib/main.ts"),
     },
     rollupOptions: {
       external: [],
