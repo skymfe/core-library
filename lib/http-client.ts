@@ -1,11 +1,11 @@
 import merge from "lodash.merge";
 
-interface CacheConfig {
+export interface CacheConfig {
   enabled: boolean;
   ttl: number;
 }
 
-interface CacheData {
+export interface CacheData {
   data: any;
   expires: number;
 }
